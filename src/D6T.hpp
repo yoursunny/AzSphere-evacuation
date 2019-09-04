@@ -1,5 +1,5 @@
-#ifndef D6T_H
-#define D6T_H
+#ifndef D6T_HPP
+#define D6T_HPP
 
 #include <Wire.h>
 
@@ -107,4 +107,4 @@ private:
 
 } // namespace d6t
 
-#endif // D6T_H
+#endif // D6T_HPP
