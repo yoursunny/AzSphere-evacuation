@@ -8,3 +8,4 @@
 lib/README
 src/app_manifest.json
 src/avnet_aesms_mt3620.json
+src/credentials.hpp

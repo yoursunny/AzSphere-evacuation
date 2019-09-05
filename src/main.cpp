@@ -1,8 +1,12 @@
 #include <Arduino.h>
 #include <Wire.h>
 
-#include <D6T.hpp>
+#include "azure-iot/DeviceClient.hpp"
+#include "D6T.hpp"
 
+#include "credentials.hpp"
+
+azure_iot::DeviceClient azClient;
 d6t::Sensor d6tSensor;
 
 void setup()
@@ -12,6 +16,10 @@ void setup()
   Wire.begin();
   Wire.changeBufferLimits(35, 1);
 
+  if (!azClient.begin(MY_CONNSTR)) {
+    Serial.println("d6t not detected");
+  }
+
   if (!d6tSensor.begin()) {
     Serial.println("d6t not detected");
   }
@@ -20,6 +28,14 @@ void setup()
 void loop()
 {
   delay(1000);
+
+  azClient.loop();
+  if (azClient.isConnected()) {
+    Serial.println("Azure connected");
+  }
+  else {
+    Serial.println("Azure disconnected");
+  }
 
   d6t::Output44 output;
   if (!d6tSensor.read(output)) {
