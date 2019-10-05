@@ -58,4 +58,10 @@ void loop()
     Serial.println();
   }
   Serial.println();
+
+  int nHots = output.countHots();
+  char json[64];
+  snprintf(json, sizeof(json), "{\"hot\":%d}", nHots);
+  azClient.send(json);
+  Serial.println(json);
 }

@@ -27,7 +27,6 @@ public:
   {
     DeviceClient* self = static_cast<DeviceClient*>(ctx);
     self->m_isConnected = result == IOTHUB_CLIENT_CONNECTION_AUTHENTICATED;
-    Serial.printf("reason=%d\n", reason);
   }
 
 private:

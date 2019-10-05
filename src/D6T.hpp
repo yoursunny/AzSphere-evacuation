@@ -40,6 +40,21 @@ public:
     return getValueAt(2 + 2 * i);
   }
 
+  /** \brief Count how many pixels are hotter than reference.
+   */
+  int
+  countHots() const
+  {
+    Temperature ref = this->getRef();
+    int result = 0;
+    for (int i = 0; i < N; ++i) {
+      if (this->getPixel(i) > ref) {
+        ++result;
+      }
+    }
+    return result;
+  }
+
 private:
   Temperature
   getValueAt(int offset) const
