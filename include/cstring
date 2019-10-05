@@ -1,4 +1,0 @@
-extern "C" {
-#include <string.h>
-}
-// workaround https://github.com/Wiz-IO/platform-azure/issues/3
