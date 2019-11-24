@@ -1,0 +1,24 @@
+{
+    "Name": "",
+    "Capabilities": {
+        "AllowedConnections": [
+            "iotc-a7776b12-529d-4cbf-991d-b29e6c850eb5.azure-devices.net"
+        ],
+        "AllowedTcpServerPorts": [],
+        "AllowedUdpServerPorts": [],
+        "Gpio": [],
+        "I2cMaster": [
+            "$AVNET_AESMS_ISU2_I2C"
+        ],
+        "SpiMaster": [],
+        "SystemTime": true,
+        "Uart": [
+            "$AVNET_AESMS_ISU0_UART"
+        ],
+        "WifiConfig": true
+    },
+    "CmdArgs": [],
+    "EntryPoint": "",
+    "SchemaVersion": 1,
+    "ComponentId": "970A88CE-CBFF-416F-A07A-DA6435DF7770"
+}
